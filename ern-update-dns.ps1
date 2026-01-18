@@ -106,7 +106,7 @@ function Update-HostsFile {
   $newContent += "$IP`t$Hostname"
 
   # Write back to file
-  $newContent | Set-Content $hostsPath -Force
+  $newContent | Out-File -Encoding ascii $hostsPath -Force
 
   Write-Message "Hosts file updated: $IP -> $Hostname" "SUCCESS"
 }
